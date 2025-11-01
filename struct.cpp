@@ -1,46 +1,29 @@
 #include<iostream>
 using namespace std;
-class digit {
-	int n;
-	public:
-		void enter() {
-			cout<<"enter thew value of n"<<endl;
-			cin>>n;
-		}
-		void show() {
-			cout<<"number = "<<n<<endl;
-			
-		}
-		int compare(digit d2) {
-			if(n<d2.n) {
-				return -1;
-			} else	if(n>d2.n) {
-				return 1;
-			}
-			else return 0;
-		}
+struct student{
+	string name;
+	int roll_no;
+	float marks;
 };
 int main() {
-	digit d1,d2;
-	cout<<"for first object"<<endl;
-	d1.enter();
-	cout<<"for second object"<<endl;
-	d2.enter();
-	d1.show();
-	d2.show();
-	
-	int x=d1.compare(d2);
-	
-		if(x==-1) {
-				cout<<"first object is smaller than second"<<endl;
-		} else if(x==-1) {
-							cout<<"first object is greater than second"<<endl;
-		} 	else {
-			cout<<"both objects are equal"<<endl;
-		}
-		return 0;
+	student arr[5];
+	float sum=0;
+	for(int i=0;i<5;i++) {
+		cout<<"enter a name"<<endl;
+		cin>>arr[i].name;
+		cout<<"enter a roll no"<<endl;
+		cin>>arr[i].roll_no;
+		cout<<"enter a marks"<<endl;
+		cin>>arr[i].marks;
+		sum=sum+arr[i].marks;
 	}
-	
-	
-	
-	
+	for(int i=0;i<5;i++) {
+		cout<<"name = "<<arr[i].name<<endl;
+	cout<<"roll no = "<<arr[i].roll_no<<endl;
+	cout<<"marks = "<<arr[i].marks<<endl;
+	cout<<endl;
+	}
+		float avg=sum/5;
+		cout<<"average of marks"<<avg<<endl;
+	   return 0;
+}
